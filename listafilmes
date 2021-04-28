@@ -1,3 +1,17 @@
+import pymongo
+import xlrd
+from collections import OrderedDict
+from itertools import islice
+from openpyxl import load_workbook
+
+# caminho do banco
+client = pymongo.MongoClient("mongodb://localhost:27017/")
+
+# banco de dados
+db = client["Banco_p1"]
+mycol = db["Dados"]
+dados = []
+
 n1 = int(input('Listar Filme'))
 n2 = int(input('Excluir Filme'))
 n3 = int(input('Inserir Avaliação'))
